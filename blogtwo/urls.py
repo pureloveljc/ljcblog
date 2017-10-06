@@ -1,0 +1,32 @@
+"""blogtwo URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Add an import:  from blog import urls as blog_urls
+    2. Import the include() function: from django.conf.urls import url, include
+    3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
+"""
+from django.conf.urls import url
+from django.contrib import admin
+from django.views.generic import  TemplateView
+from users.views import AboutView,ListpicView,NewslispicView,indexView,article_page,LoginView
+import  xadmin
+
+urlpatterns = [
+    #url(r'^admin/', admin.site.urls),
+    url(r'^xadmin/', xadmin.site.urls),
+    url(r'^$', indexView.as_view(),name="index"),
+    url(r'^about/$',AboutView.as_view(),name="about"),
+    url(r'^listpic/$', ListpicView.as_view(),name="listpic"),
+    url(r'^newslistpic/$', NewslispicView.as_view(), name="newslistpic"),
+    url(r'^content/(?P<article_id>[0-9]+)/$',article_page,name="article_page"),
+    url(r'^login/$',LoginView.as_view(),name='login'),
+]

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}sourcecode首页{% endblock %}
+{% load staticfiles %}
+{% block container %}
+    <div class="container">
+<div class="bloglist f_l">
+    {% for articel in articles.object_list %}
+<h3><a href="{%  url 'article_page' articel.id %}">{{ articel.title}}</a></h3>
+      <figure><img src="{% static 'images/img_1.jpg' %}" alt="【心路历程】请不要在设计这条路上徘徊啦"></figure>
+      <ul>
+        <p> {{ articel.desc}}</p>
+          <a title="【心路历程】请不要在设计这条路上徘徊啦" href="{%  url 'article_page' articel.id %}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+      </ul>
+      <p class="dateview"><span>2017-07-13</span><span>作者：</span><span>个人博客：[<a href="/jstt/bj/">心得笔记</a>]</span></p>
+            {% endfor %}
+    </div>
+    <div class="r_box f_r">
+      <div class="tit01">
+        <h3 class="tit">关注我</h3>
+        <div class="gzwm">
+          <ul>
+            <li><a class="email" href="#" target="_blank">我的电话</a></li>
+            <li><a class="qq" href="#mailto:admin@admin.com" target="_blank">我的邮箱</a></li>
+            <li><a class="tel" href="#" target="_blank">我的QQ</a></li>
+            <li><a class="prize" href="#">个人奖项</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--tit01 end-->
+
+      <div class="tuwen">
+        <h3 class="tit">图文推荐</h3>
+        <ul>
+          <li><a href="/"><img src=""><b>住在手机里的朋友</b></a>
+              <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/"><img src="{% static 'images/02.jpg' %}"><b>教你怎样用欠费手机拨打电话</b></a>
+              <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/" title="手机的16个惊人小秘密，据说99.999%的人都不知"><img src="{% static 'images/03.jpg' %}"><b>手机的16个惊人小秘密，据说...</b></a>
+            <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/"><img src="{% static 'images/06.jpg' %}"><b>住在手机里的朋友</b></a>
+            <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/"><img src="{% static 'images/04.jpg' %}"><b>教你怎样用欠费手机拨打电话</b></a>
+            <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/"><img src="{% static 'images/02.jpg' %}"><b>教你怎样用欠费手机拨打电话</b></a>
+            <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+          <li><a href="/" title="手机的16个惊人小秘密，据说99.999%的人都不知"><img src="{% static 'images/03.jpg' %}"><b>手机的16个惊人小秘密，据说...</b></a>
+            <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+          </li>
+        </ul>
+      </div>
+      <div class="ph">
+        <h3 class="tit">点击排行</h3>
+        <ul class="rank">
+          <li><a href="/jstt/bj/2017-07-13/784.html" title="【心路历程】请不要在设计这条路上徘徊啦" target="_blank">【心路历程】请不要在设计这条路上徘徊啦</a></li>
+          <li><a href="/news/s/2016-05-20/751.html" title="IP要突破2000+了" target="_blank">IP要突破2000+了</a></li>
+          <li><a href="/jstt/web/2015-07-03/749.html" title="帝国cms首页、自定义页面如何实现分页" target="_blank">帝国cms首页、自定义页面如何实现分页</a></li>
+          <li><a href="/jstt/web/2015-02-25/745.html" title="【已评选】给我模板PSD源文件，我给你设计HTML！" target="_blank">【已评选】给我模板PSD源文件，我给你设计HTML！</a></li>
+          <li><a href="/jstt/bj/2015-02-14/744.html" title="【郑重申明】本站只提供静态模板下载！" target="_blank">【郑重申明】本站只提供静态模板下载！</a></li>
+          <li><a href="/news/s/2015-01-23/741.html" title="【孕期日记】生活本该如此" target="_blank">【孕期日记】生活本该如此</a></li>
+          <li><a href="/jstt/bj/2015-01-09/740.html" title="【匆匆那些年】总结个人博客经历的这四年…" target="_blank">【匆匆那些年】总结个人博客经历的这四年…</a></li>
+          <li><a href="/jstt/web/2015-01-01/739.html" title=" 2014年度优秀个人博客排名公布" target="_blank"> 2014年度优秀个人博客排名公布</a></li>
+          <li><a href="/jstt/web/2014-12-18/736.html" title="2014年度优秀个人博客评选活动" target="_blank">2014年度优秀个人博客评选活动</a></li>
+          <li><a href="/jstt/css3/2014-12-09/734.html" title="使用CSS3制作文字、图片倒影" target="_blank">使用CSS3制作文字、图片倒影</a></li>
+          <li><a href="/jstt/css3/2014-11-18/733.html" title="【分享】css3侧边栏导航不同方向划出效果" target="_blank">【分享】css3侧边栏导航不同方向划出效果</a></li>
+          <li><a href="/jstt/bj/2014-11-06/732.html" title="分享我的个人博客访问量如何做到IP从10到600的(图文)" target="_blank">分享我的个人博客访问量如何做到IP从10到600的(图文)</a></li>
+        </ul>
+      </div>
+      <div class="ad"> <img src="{% static 'images/03.jpg' %}/"> </div>
+    </div>
+  </div>
+  <!-- container代码 结束 -->
+{% endblock %}
+{% block page_turn %}
+    		 <div class="pageturn">
+            <ul class="pagelist">
+                {% if articles.has_previous %}
+          <li class="long"><a href="?{{ articles.previous_page_number.querystring}}">上一页</a></li>
+                {% endif %}
+            {% for page in articles.pages %}
+        {% if page %}
+            {% ifequal page articles.number %}
+                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+            {% else %}
+                <li class="page">   <a href="?{{ page.querystring }}" >{{ page }}</a></li>
+            {% endifequal %}
+        {% else %}
+                <li class="none"><a href="">...</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if articles.has_next %}
+      <li class="long">  <a href="?{{ articles.next_page_number.querystring }}">下一页</a></li>
+    {% endif %}
+            </ul>
+        </div>
+{% endblock %}
